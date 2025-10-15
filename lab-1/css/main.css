@@ -1,0 +1,116 @@
+/* Minimal reset */
+html {
+  font-size: 16px; /* base font size */
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  color-scheme: light dark; 
+}
+
+body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+:root {
+  --bg-color: white;
+  --text-color: black;
+  --link-color: #0066cc;
+  --form-bg: white;
+  --form-border: 1px solid black;
+  --input-bg: white;
+  --input-color: black;
+  --submit-bg: #52b457;
+  --submit-bg-hover: #45a049;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: white;
+    --link-color: #3399ff;
+    --form-bg: #242629;
+    --form-border: none;
+    --input-bg: #3d4046;
+    --input-color: white;
+    --submit-bg: #5bc85b;
+    --submit-bg-hover: #4fb14f;
+  }
+}
+
+body .container {
+  max-width: 500px;
+  margin: 5px auto;
+  padding: 0;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#toggleTheme {
+  float: right;
+  font-size: 2rem;
+  background: transparent;
+  background-color: transparent !important;
+  border: none;
+  border: none;
+  cursor: pointer;
+}
+
+h1 {
+  color: black;
+}
+
+form {
+  background-color: var(--form-bg);
+  color: var(--text-color);
+  border: var(--form-border);
+  padding: 20px;
+}
+
+form > input,
+form > select,
+form > datalist,
+form > textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 1px;
+  margin: 5px auto;
+  background-color: var(--input-bg);
+  color: var(--input-color);
+}
+
+input[type="checkbox"] {
+  width: auto;
+}
+
+input:hover,
+#toggleTheme:hover {
+  cursor: pointer;
+  text-align: center;
+}
+
+form > input[type="submit"] {
+  color: white;
+  background-color: var(--submit-bg);
+  border: none;
+  cursor: pointer;
+}
+
+form > input[type="submit"]:hover {
+  background-color: var(--submit-bg-hover);
+}
