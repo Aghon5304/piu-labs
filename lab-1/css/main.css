@@ -13,17 +13,24 @@ body {
 }
 
 :root {
+  color-scheme: light dark;
   --bg-color: white;
-  --text-color: black;
-  --link-color: #0066cc;
-  --form-bg: white;
-  --form-border: 1px solid black;
-  --input-bg: white;
-  --input-color: black;
-  --submit-bg: #52b457;
-  --submit-bg-hover: #45a049;
 }
-
+@media (prefers-color-scheme: light) {
+  :root {
+    --text-color: black;
+    --link-color: #0066cc;
+    --form-bg: white;
+    --form-border: 1px solid black;
+    --input-bg: white;
+    --input-color: black;
+    --submit-bg: #52b457;
+    --submit-bg-hover: #45a049;
+  }
+  h1 + button::after{
+    content: "🌞";
+  }
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -35,6 +42,9 @@ body {
     --input-color: white;
     --submit-bg: #5bc85b;
     --submit-bg-hover: #4fb14f;
+  }
+  h1 + button::after{
+    content: "🌜";
   }
 }
 
