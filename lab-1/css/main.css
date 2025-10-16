@@ -1,0 +1,13 @@
+/* Minimal reset */
+html {
+  font-size: 16px; /* base font size */
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  color-scheme: light dark; 
+}
+
+body {
+  width: 100%;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
