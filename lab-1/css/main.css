@@ -8,6 +8,6 @@ html {
 
 body {
   width: 100%;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  background-color: white;
+  color: black;
 }
