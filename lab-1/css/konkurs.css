@@ -17,6 +17,7 @@ body {
   --bg-color: white;
 }
 @media (prefers-color-scheme: light) {
+
   :root {
     --text-color: black;
     --link-color: #0066cc;
@@ -27,13 +28,10 @@ body {
     --submit-bg: #52b457;
     --submit-bg-hover: #45a049;
   }
-  h1 + button::after{
+  h1 + input + label::after{
     content: "🌞";
   }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
+  :root:has( #motyw:checked) {
     --text-color: white;
     --link-color: #3399ff;
     --form-bg: #242629;
@@ -43,9 +41,44 @@ body {
     --submit-bg: #5bc85b;
     --submit-bg-hover: #4fb14f;
   }
-  h1 + button::after{
+  #motyw:checked + label::after{
     content: "🌜";
   }
+
+}
+
+@media (prefers-color-scheme: dark) {
+  :root{
+    --text-color: white;
+    --link-color: #3399ff;
+    --form-bg: #242629;
+    --form-border: none;
+    --input-bg: #3d4046;
+    --input-color: white;
+    --submit-bg: #5bc85b;
+    --submit-bg-hover: #4fb14f;
+  }
+  h1 + input + label::after{
+    content: "🌜";
+  }
+
+  :root:has( #motyw:checked) {
+    --text-color: black;
+    --link-color: #0066cc;
+    --form-bg: white;
+    --form-border: 1px solid black;
+    --input-bg: white;
+    --input-color: black;
+    --submit-bg: #52b457;
+    --submit-bg-hover: #45a049;
+  }
+  #motyw:checked + label::after{
+    content: "🌞";
+  }
+}
+
+#motyw{
+  display: none;
 }
 
 a {
@@ -67,11 +100,11 @@ header {
 h1 {
   color: black;
 }
-h1:has(+ button){
+h1:has(+ input + label){
   width: 75%;
   float: left;
 }
-h1 + button{
+h1 + input + label{
   float: right;
   font-size: 5rem;
   background-color: transparent !important;
@@ -103,13 +136,13 @@ form > datalist,
 form > textarea{
   width: calc(100% - 40px);
   box-sizing: border-box;
-  border: none;
+  border: var(--form-border);
   border-radius: 4px;
   font-size: 16px;
-  padding: 1px;
   margin: 0px 20px 10px;
   background-color: var(--input-bg);
   color: var(--input-color);
+  min-height: 2rem;
 }
 
 form > fieldset{
@@ -137,8 +170,16 @@ form > input[type="submit"] {
   background-color: var(--submit-bg);
   border: none;
   cursor: pointer;
+  padding: 5px;
 }
-
+label[for="publication"]{
+  padding-bottom: 10px;
+  min-height: 2rem;
+}
+#publication{
+  height: auto;
+  min-height: 0px;
+}
 form > input[type="submit"]:hover {
   background-color: var(--submit-bg-hover);
 }
