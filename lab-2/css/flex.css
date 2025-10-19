@@ -1,0 +1,70 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 1rem;
+}
+.item{
+    color: white;
+    padding: 20px 120px;
+    margin: 10px;
+    display: flex;
+    border-radius: 10px;
+}
+fieldset,.container{
+    border-radius: 5px;
+    border: 2px solid orange;
+    padding: 10px;
+    margin: 10px;
+    background-color: bisque;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media (min-width: 652px) {
+    body:has( .theme-picker input[value="blue"]:checked) .container .item {
+        flex-direction: column;
+        background-color: blue;
+    }
+    /* czerowny */
+    body:has( .theme-picker input[value="red"]:checked) .container {
+        .item {
+            flex-direction: column;
+            background-color: red;
+            padding: 20px 60px;
+        }
+        .item:nth-child(2),.item:nth-child(3){
+            order: 1;
+        }
+        .item:first-child{
+            order: 2;
+            padding: 20px 120px;
+            
+        } 
+        .item:nth-child(5),.item:nth-child(4){
+            order: 3;
+        }
+    }
+    /* zielony */
+
+}
+@media (min-width: 984px) {
+    body:has( .theme-picker input[value="blue"]:checked) .container .item {
+        flex-direction: column;
+        background-color: blue;
+    }
+}
+@media (min-width: 1033px) {
+    body:has( .theme-picker input[value="blue"]:checked) .container .item {
+        flex-direction: column;
+        background-color: blue;
+    }
+}
+@media (min-width: 1396px) {
+    body:has( .theme-picker input[value="blue"]:checked) .container .item {
+        flex-direction: column;
+        background-color: blue;
+    }
+}
