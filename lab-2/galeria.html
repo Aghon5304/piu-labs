@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta 
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    >
+    <title>Responsywne obrazy – demo</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        text-align: center;
+      }
+      picture,
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Responsywny obraz w HTML</h1>
+    <h2>PICTURE</h2>
+    <picture>
+      <source srcset="images/zdjecie.jpg" media="(min-width: 1200px)">
+      <source srcset="images/zdjecie.jpg" media="(min-width: 800px)">
+      <source srcset="images/zdjecie.jpg" media="(max-width: 799px)">
+      <img id="mainImage" src="zdjecie.jpg" alt="lody">
+    </picture>
+  </body>
+  <h2>IMG</h2>
+  <img
+    src="images/d_1000.jpg"
+    srcset="
+      images/zdjecie.jpg  600w,
+      images/zdjecie.jpg 1000w,
+      images/zdjecie.jpg 1500w
+    "
+    sizes="(max-width: 799px) 600px, 
+         (max-width: 1199px) 1000px, 
+         1500px"
+    alt="lody"
+  >
+</html>
