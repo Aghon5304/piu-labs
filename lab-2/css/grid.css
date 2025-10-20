@@ -13,3 +13,71 @@ main, aside {
     line-height: 1.5;
   }
 }
+.container{
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "aside"
+    "footer";
+  grid-template-columns: 25%,25%,25%,25%;
+  grid-gap: 0rem;
+}
+/* mobilka */
+header {
+  align-items: center;
+  flex-flow: row;
+  display: flex;
+  grid-area: header;
+  background-color: orange;
+  color: white;
+  text-align: left;
+  .logo {
+    font-size: 5rem;
+    font-weight: bold;
+  }
+}
+nav {
+  text-align: center;
+  grid-area: nav;
+  background-color: lightskyblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+aside {
+  grid-area: aside;
+  background-color: lightgreen;
+  padding-left: 1rem;
+  span{
+    font-weight: bold;
+    font-size: 5rem;
+  }
+  div{
+    text-align: center;
+  }
+}
+main {
+  padding: 1rem;
+  grid-area: main;
+}
+footer {
+  display: flex;
+  justify-content: center;
+  color: white;
+  background-color: green;
+  grid-area: footer;
+}
+@media (min-width: 1024px) {
+}
+@media (max-width: 1200px) {
+}
