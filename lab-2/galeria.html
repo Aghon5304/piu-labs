@@ -2,45 +2,139 @@
 <html lang="pl">
   <head>
     <meta charset="UTF-8" />
-    <meta 
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    >
-    <title>Responsywne obrazy – demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeria responsywna</title>
     <style>
-      body {
-        font-family: system-ui, sans-serif;
+      body{
+        background-color: antiquewhite;
         text-align: center;
       }
-      picture,
-      img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 12px;
+      main{
+        margin: 1.5rem auto;
+        padding: 1rem;
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: 1fr;
+        align-items: start;
+      }
+      @media (min-width: 1200px){
+        main{
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      figure img{
+        display:block;
+        width:100%;
+        height:auto;
+      }
+      figure:hover{
+        box-shadow: black 1rem 1rem 2rem;
+        border: 2px solid black;
       }
     </style>
   </head>
   <body>
-    <h1>Responsywny obraz w HTML</h1>
-    <h2>PICTURE</h2>
-    <picture>
-      <source srcset="images/zdjecie.jpg" media="(min-width: 1200px)">
-      <source srcset="images/zdjecie.jpg" media="(min-width: 800px)">
-      <source srcset="images/zdjecie.jpg" media="(max-width: 799px)">
-      <img id="mainImage" src="zdjecie.jpg" alt="lody">
-    </picture>
+    <main>
+      <figure>
+        <picture>
+          <source media="(min-width:1600px)" srcset="images/roztopione_lody.webp">
+          <source media="(min-width:1200px)" srcset="images/zdjecie.webp">
+          <source media="(min-width:800px)" srcset="images/roztopione_lody.webp">
+          <img src="images/zdjecie.webp" alt="lody">
+        </picture>
+        <figcaption>Opis zdjęcia 1</figcaption>
+      </figure>
+
+      <figure>
+        <picture>
+          <source media="(min-width:1600px)" srcset="images/roztopione_lody.webp">
+          <source media="(min-width:1200px)" srcset="images/zdjecie.webp">
+          <source media="(min-width:800px)" srcset="images/roztopione_lody.webp">
+          <img src="images/zdjecie.webp" alt="lody">
+        </picture>
+        <figcaption>Opis zdjęcia 2</figcaption>
+      </figure>
+      <figure>
+        <picture>
+          <source media="(min-width:1600px)" srcset="images/roztopione_lody.webp">
+          <source media="(min-width:1200px)" srcset="images/zdjecie.webp">
+          <source media="(min-width:800px)" srcset="images/roztopione_lody.webp">
+          <img src="images/zdjecie.webp" alt="lody">
+        </picture>
+        <figcaption>Opis zdjęcia 3</figcaption>
+      </figure>
+
+      <figure>
+        <picture>
+          <source media="(min-width:1600px)" srcset="images/roztopione_lody.webp">
+          <source media="(min-width:1200px)" srcset="images/zdjecie.webp">
+          <source media="(min-width:800px)" srcset="images/roztopione_lody.webp">
+          <img src="images/zdjecie.webp" alt="lody">
+        </picture>
+        <figcaption>Opis zdjęcia 4</figcaption>
+      </figure>
+
+      <figure>
+        <picture>
+          <source media="(min-width:1600px)" srcset="images/roztopione_lody.webp">
+          <source media="(min-width:1200px)" srcset="images/zdjecie.webp">
+          <source media="(min-width:800px)" srcset="images/roztopione_lody.webp">
+          <img src="images/zdjecie.webp" alt="lody">
+        </picture>
+        <figcaption>Opis zdjęcia 5</figcaption>
+      </figure>
+
+      <figure>
+        <picture>
+          <source media="(min-width:1600px)" srcset="images/roztopione_lody.webp">
+          <source media="(min-width:1200px)" srcset="images/zdjecie.webp">
+          <source media="(min-width:800px)" srcset="images/roztopione_lody.webp">
+          <img src="images/zdjecie.webp" alt="lody">
+        </picture>
+        <figcaption>Opis zdjęcia 6</figcaption>
+      </figure>
+
+      <figure>
+        <picture>
+          <source media="(min-width:1600px)" srcset="images/roztopione_lody.webp">
+          <source media="(min-width:1200px)" srcset="images/zdjecie.webp">
+          <source media="(min-width:800px)" srcset="images/roztopione_lody.webp">
+          <img src="images/zdjecie.webp" alt="lody">
+        </picture>
+        <figcaption>Opis zdjęcia 7</figcaption>
+      </figure>
+
+      <figure>
+        <picture>
+          <source media="(min-width:1600px)" srcset="images/roztopione_lody.webp">
+          <source media="(min-width:1200px)" srcset="images/zdjecie.webp">
+          <source media="(min-width:800px)" srcset="images/roztopione_lody.webp">
+          <img src="images/zdjecie.webp" alt="lody">
+        </picture>
+        <figcaption>Opis zdjęcia 8</figcaption>
+      </figure>
+
+      <figure>
+        <picture>
+          <source media="(min-width:1600px)" srcset="images/roztopione_lody.webp">
+          <source media="(min-width:1200px)" srcset="images/zdjecie.webp">
+          <source media="(min-width:800px)" srcset="images/roztopione_lody.webp">
+          <img src="images/zdjecie.webp" alt="lody">
+        </picture>
+        <figcaption>Opis zdjęcia 9</figcaption>
+      </figure>
+
+      <figure>
+        <picture>
+          <source media="(min-width:1600px)" srcset="images/roztopione_lody.webp">
+          <source media="(min-width:1200px)" srcset="images/zdjecie.webp">
+          <source media="(min-width:800px)" srcset="images/roztopione_lody.webp">
+          <img src="images/zdjecie.webp" alt="lody">
+        </picture>
+        <figcaption>Opis zdjęcia 10</figcaption>
+      </figure>
+
+    </main>
   </body>
-  <h2>IMG</h2>
-  <img
-    src="images/d_1000.jpg"
-    srcset="
-      images/zdjecie.jpg  600w,
-      images/zdjecie.jpg 1000w,
-      images/zdjecie.jpg 1500w
-    "
-    sizes="(max-width: 799px) 600px, 
-         (max-width: 1199px) 1000px, 
-         1500px"
-    alt="lody"
-  >
 </html>
