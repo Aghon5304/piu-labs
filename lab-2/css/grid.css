@@ -22,7 +22,8 @@ main, aside {
     "main"
     "aside"
     "footer";
-  grid-template-columns: 25%,25%,25%,25%;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto auto;
   grid-gap: 0rem;
 }
 /* mobilka */
@@ -35,8 +36,18 @@ header {
   color: white;
   text-align: left;
   .logo {
-    font-size: 5rem;
+    font-size: 1rem;
     font-weight: bold;
+    background: white;
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+  }
+  .logo::before{
+    content:"logo";
+    color: black;
+    font-size: 1.5rem;
+    justify-content: center;
   }
 }
 nav {
@@ -47,6 +58,7 @@ nav {
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  padding: 0.5rem 0;
 }
 nav a {
   text-decoration: none;
@@ -63,6 +75,10 @@ aside {
     font-size: 5rem;
   }
   div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     text-align: center;
   }
 }
@@ -78,6 +94,25 @@ footer {
   grid-area: footer;
 }
 @media (min-width: 1024px) {
+  .container {
+    grid-template-areas:
+      "header header header"
+      "nav nav nav"
+      "main main aside"
+      "footer footer footer";
+    grid-template-columns: 1fr 1fr 0.61fr;
+    grid-template-rows: auto auto 1fr auto;
+    grid-gap: 0rem;
+  }
+  nav{
+    padding: 1rem;
+    justify-content: flex-start;
+  }
 }
-@media (max-width: 1200px) {
+@media (min-width: 1200px) {
+  .container{
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.16);
+  }
 }
