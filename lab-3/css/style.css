@@ -26,7 +26,47 @@ a {
 a:hover {
   text-decoration: underline; /* podkreślenie przy najechaniu */
 }
-
+@keyframes sizeS {
+  0% {
+	  transform-origin: center center;
+  }
+  100% {
+    transform: scale(0.9)
+		skew(10deg,0deg);
+	  transform-origin: center center;
+  }
+}
+@keyframes sizeM {
+  0% {
+	  transform-origin: center center;
+  }
+  100% {
+    transform: scale(1)
+  }
+}
+@keyframes sizeL {
+  0% {
+	  transform-origin: center center;
+  }
+  50%{
+    rotate: 180deg;
+  }
+  100% {
+    rotate: 360deg;
+    transform: scale(1.1);
+  }
+}
+@keyframes sizeXL {
+  0% {
+    transform-origin: center center;
+  }
+  100% {
+	  transform: rotateX(360deg)
+		rotateY(360deg)
+		rotateZ(360deg);
+	  transform-origin: center center;
+  }
+}
 :root {
   --background-color: #dad3d3;
   --main-color: rgb(33, 70, 218);
@@ -45,6 +85,18 @@ a:hover {
     --main-color: rgb(219, 151, 2);
     --image: url('../images/polo_y.png');
   }
+}
+body:has(input[id="S"]:checked) picture{
+  animation: sizeS 1s ease-in-out;
+}
+body:has(input[id="M"]:checked) picture{
+  animation: sizeM 1s ease-in-out;
+}
+body:has(input[id="L"]:checked) picture{
+  animation: sizeL 1s ease-in-out;
+}
+body:has(input[id="XL"]:checked) picture{
+  animation: sizeXL 1s ease-in-out;
 }
 
 picture {
