@@ -4,9 +4,15 @@ html {
   font-family: system-ui, sans-serif; /* font systemowy */
   line-height: 1.5; /* lepsza czytelność */
 }
+
 body {
   margin: 1rem;
   padding: 0;
+  background-color: var(--background-color);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 a {
@@ -14,6 +20,66 @@ a {
   text-decoration: none; /* bez podkreślenia */
   font-size: 1.4rem;
 }
+
 a:hover {
   text-decoration: underline; /* podkreślenie przy najechaniu */
+}
+
+:root {
+  --background-color: #dad3d3;
+  --main-color: blue;
+  --border-radius: 10px;
+}
+
+img {
+  max-width: 500px;
+  border: 2px solid var(--main-color);
+  border-radius: var(--border-radius);
+}
+main{
+  width: 300px;
+}
+form>input[name="size"]{
+  visibility: hidden;
+  width: 0;
+} 
+form>label{
+  width: 50px;
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--background-color);
+  border: 3px solid black;
+  border-radius: var(--border-radius);
+}
+form>label:hover{
+  cursor: pointer;
+  background-color: var(--main-color);
+  color: var(--background-color);
+}
+form>input[name="color"]{
+  appearance: none;
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid black;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0;
+}
+form > input#blue   { background-color: blue;   }
+form > input#green  { background-color: green;  }
+form > input#red    { background-color: red;    }
+form > input#yellow { background-color: yellow; }
+
+form > input[name="color"]:checked
+{
+  transform: scale(0.95);
+  box-shadow: 0 0 0 3px var(--background-color);
+}
+.promotion{
+  background-color: var(--main-color);
+  border-radius: var(--border-radius);
+  color: var(--background-color);
 }
