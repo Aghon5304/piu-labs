@@ -8,7 +8,10 @@ body {
   margin: 1rem;
   padding: 0;
 }
-
+:root {
+  --border: 2px solid black;
+  --border-radius: 8px;
+}
 a {
   color: #0066cc; /* niebieski kolor linków */
   text-decoration: none; /* bez podkreślenia */
@@ -17,3 +20,48 @@ a {
 a:hover {
   text-decoration: underline; /* podkreślenie przy najechaniu */
 }
+main{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+}
+section {
+  border: var(--border);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  max-width: 30%;
+  min-height: 20rem;
+  vertical-align: top;
+  flex-grow: 1;
+}
+.card {
+  display: grid;
+  margin: 0.5rem 0;
+  grid-template-areas:
+    "up text X"
+    "down text ."
+    "back color forward";
+  grid-template-columns: 0.1fr 1fr 0.1fr;
+  gap: 1rem;
+  width: 100%;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  width: auto;
+  text-align: center;
+}
+.card > * {
+  min-width: 0;
+}
+
+.card label { 
+  grid-area: text;
+  word-break: break-all;
+}
+.card .remove { grid-area: X; }
+.card .colorBtn { grid-area: color; }
+.card .moveBack { grid-area: back; }
+.card .moveForward { grid-area: forward; }
+.card .up { grid-area: up;}
+.card .down { grid-area: down;}
