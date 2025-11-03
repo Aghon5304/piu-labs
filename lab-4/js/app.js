@@ -126,14 +126,14 @@ document.addEventListener('DOMContentLoaded', () => {
         buttonUp.addEventListener('click', () => {
             const previous = card.previousElementSibling;
             if (previous && previous.classList && previous.classList.contains('card')) {
-                const currId = parseInt(card.id, 10);
-                const prevId = parseInt(previous.id, 10);
+                const currId = Number(card.id);
+                const prevId = Number(previous.id);
 
                 previous.before(card);
-                var temp = cards[cards.findIndex(c => c.id === currId)];
-                cards[cards.findIndex(c => c.id === currId)] = cards[cards.findIndex(c => c.id === prevId)];
-                cards[cards.findIndex(c => c.id === prevId)] = temp;
 
+                const currIdx = cards.findIndex(c => Number(c.id) === currId);
+                const prevIdx = cards.findIndex(c => Number(c.id) === prevId);
+                [cards[currIdx], cards[prevIdx]] = [cards[prevIdx], cards[currIdx]];
                 localStorage.setItem('cards', JSON.stringify(cards));
             }
         });
@@ -145,15 +145,17 @@ document.addEventListener('DOMContentLoaded', () => {
         buttonDown.addEventListener('click', () => {
             const next = card.nextElementSibling;
             if (next && next.classList && next.classList.contains('card')) {
-                const currId = parseInt(card.id, 10);
-                const nextId = parseInt(next.id, 10);
+                const currId = Number(card.id);
+                const nextId = Number(next.id);
 
                 next.after(card);
-                var temp = cards[cards.findIndex(c => c.id === currId)];
-                cards[cards.findIndex(c => c.id === currId)] = cards[cards.findIndex(c => c.id === nextId)];
-                cards[cards.findIndex(c => c.id === nextId)] = temp;
 
-                localStorage.setItem('cards', JSON.stringify(cards));
+                const currIdx = cards.findIndex(c => Number(c.id) === currId);
+                const nextIdx = cards.findIndex(c => Number(c.id) === nextId);
+                if (currIdx > -1 && nextIdx > -1) {
+                    [cards[currIdx], cards[nextIdx]] = [cards[nextIdx], cards[currIdx]];
+                    localStorage.setItem('cards', JSON.stringify(cards));
+                }
             }
         });
         card.style.backgroundColor = created.color;
