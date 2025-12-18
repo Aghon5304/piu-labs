@@ -1,0 +1,44 @@
+[
+	{
+		"name": "Apple",
+		"image": "https://upload.wikimedia.org/wikipedia/commons/1/15/Red_Apple.jpg",
+		"price": "2.99",
+		"description": "Fresh and juicy red apple, perfect for a healthy snack.",
+		"promotion": "Buy 2 get 1 free!",
+		"colors": ["Red", "Green", "Yellow"],
+		"sizes": ["Small", "Medium", "Large"]
+	},
+	{
+		"name": "Orange",
+		"image": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Orange-Fruit-Pieces.jpg",
+		"price": "3.49",
+		"description": "Sweet and tangy oranges, full of vitamin C.",
+		"promotion": "Limited time: 10% off!",
+		"colors": ["Orange"],
+		"sizes": ["Small", "Large"]
+	},
+	{
+		"name": "Banana",
+		"image": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Banana-Single.jpg",
+		"price": "1.99",
+		"description": "Ripe bananas, great for smoothies and snacks.",
+		"colors": ["Yellow"]
+	},
+	{
+		"name": "Grapes",
+		"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Wine_grapes03.jpg/640px-Wine_grapes03.jpg",
+		"price": "6.99",
+		"description": "Seedless grapes, perfect for sharing.",
+		"promotion": "Family pack discount!",
+		"colors": ["Green", "Red", "Black"],
+		"sizes": ["Small bunch", "Large bunch"]
+	},
+	{
+		"name": "Pear",
+		"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/D%27anjou_pear.jpg/640px-D%27anjou_pear.jpg",
+		"price": "2.49",
+		"description": "Crisp and sweet pears, ideal for desserts.",
+		"promotion": "Seasonal price!",
+		"sizes": ["Small", "Medium"]
+	}
+]

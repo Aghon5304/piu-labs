@@ -1,0 +1,56 @@
+<style>
+  .cart-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 8px 6px;
+    max-height: 96px;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eee;
+  }
+
+  .cart-item .item-image {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+    background: #f7f7f7;
+  }
+
+  .cart-item .item-details {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-width: 0;
+    position: relative;
+  }
+
+  .cart-item .item-name {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.2;
+    margin-bottom: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .cart-item .item-price {
+    position: absolute;
+    right: 0;
+    bottom: 4px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #222;
+  }
+</style>
+<li class="cart-item">
+  <img class="item-image" src="" alt="Product Image" />
+  <div class="item-details">
+    <div class="item-name"></div>
+    <div class="item-price"></div>
+  </div>
+  <button class="remove-from-cart">Remove</button>
+</li>
