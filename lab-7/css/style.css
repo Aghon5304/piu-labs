@@ -1,8 +1,8 @@
-.products-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-    justify-content: center;
-    align-items: flex-start;
-    margin: 32px 0;
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 32px 0;
 }

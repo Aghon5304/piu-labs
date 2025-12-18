@@ -1,172 +1,194 @@
 <style>
-    :host {
-        border: 1px solid #e0e0e0;
-        border-radius: 12px;
-        overflow: hidden;
-        background-color: #fff;
-        font-family: 'Segoe UI', sans-serif;
-        width: 320px;
-        height: 520px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-        margin: 0;
-        flex: 0 1 320px;
-    }
+  :host {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    width: 320px;
+    height: 520px;
+    min-height: 520px;
+    display: flex;
+    flex-direction: column;
+  }
 
-    :host(:hover) {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-        height: auto;
-    }
+  :host(:hover) {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    min-height: 520px;
+    height: auto;
+  }
 
-    .image {
-        margin: 0;
-        width: 100%;
-        height: 200px;
-        background-color: #f4f4f4;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-    }
+  .image {
+    margin: 0;
+    width: 100%;
+    height: 200px;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
 
-    .image ::slotted(img), .image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; 
-        display: block;
-    }
+  .image ::slotted(img),
+  .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
 
-    .product-details {
-        padding: 20px;
-        display: flex;
-        height: 55%;
-        flex-direction: column;
-        gap: 10px;
-    }
+  .product-details {
+    padding: 20px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 10px;
+  }
 
-    .Product-name {
-        margin: 0;
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: #333;
-        line-height: 1.3;
-    }
+  .Product-name {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.3;
+  }
 
-    .Product-price {
-        margin: 0;
-        font-size: 1.4rem;
-        font-weight: 700;
-        color: #2c3e50;
-        margin-bottom: 5px;
-    }
+  .Product-price {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 5px;
+  }
 
-    .product-options {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0px;
-    }
+  .product-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0px;
+  }
 
-    .option-group {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-    }
+  .option-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
 
-    .option-label {
-        font-size: 0.85rem;
-        color: #7f8c8d;
-        font-weight: 500;
-    }
+  .option-label {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    font-weight: 500;
+  }
 
-    .product-colors, 
-    .product-sizes {
-        margin: 0;
-        display: inline-flex; 
-        gap: 5px;
-        font-weight: 500;
-        font-size: 0.9rem;
-        color: #333;
-    }
+  .product-colors,
+  .product-sizes,
+  ::slotted(.product-colors),
+  ::slotted(.product-sizes) {
+    margin: 0;
+    display: inline-flex;
+    gap: 5px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #333;
+    list-style: none;
+    padding: 0;
+  }
 
-    .product-promotion {
-        margin: 0;
-        font-size: 0.85rem;
-        color: #e74c3c;
-        font-weight: bold;
-    }
+  .product-promotion {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #e74c3c;
+    font-weight: bold;
+  }
 
-    .add-to-cart-btn {
-        margin-top: auto;
-        width: 100%;
-        padding: 12px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 6px;
-        font-size: 1rem;
-        font-weight: 600;
-        cursor: pointer;
-        align-self: flex-end;
-        transition: background-color 0.2s;
-    }
+  .add-to-cart-btn {
+    margin-top: auto;
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    align-self: flex-end;
+    transition: background-color 0.2s;
+  }
 
-    .product-description {
-        margin: 0;
-        font-size: 0.75rem;
-        color: #555;
-        line-height: 1.4;
-        flex-grow: 1;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    .add-to-cart-btn:hover {
-        background-color: #0056b3;
-    }
-    #color, #size, .product-colors, .product-sizes, .product-promotion {
-        display: inline-block;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    :host(:hover) #color, :host(:hover) #size, :host(:hover) .product-colors, :host(:hover) .product-sizes, :host(:hover) .product-promotion, :host(:hover) .product-description, .option-group{
-        overflow: visible;
-        white-space: wrap;
-    }
-    ul, ::slotted(ul) {
-        margin: 0;
-    }
+  .product-description {
+    margin: 0;
+    font-size: 0.75rem;
+    color: #555;
+    line-height: 1.4;
+    flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .add-to-cart-btn:hover {
+    background-color: #0056b3;
+  }
+  #color,
+  #size,
+  .product-colors,
+  .product-sizes,
+  .product-promotion {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  :host(:hover) #color,
+  :host(:hover) #size,
+  :host(:hover) .product-colors,
+  :host(:hover) .product-sizes,
+  :host(:hover) .product-promotion,
+  :host(:hover) .product-description,
+  .option-group {
+    overflow: visible;
+    white-space: wrap;
+  }
+  ul,
+  ::slotted(ul) {
+    margin: 0;
+  }
 </style>
 <p class="image">
-   <slot name="product-image">
-        <img src="" />
-   </slot>
+  <slot name="product-image">
+    <img src="" />
+  </slot>
 </p>
 <div class="product-details">
-    <p class="Product-name">
-        <slot name="product-name">Default name.</slot>
-    </p>
-    <p class="product-description">
-        <slot name="product-description">Default description.</slot>
-    </p>
-    <div class="product-options">
-        <div class="option-group">
-            <span id="color" class="option-label">Dostępne kolory:</span>
-            <slot name="product-colors"><ul><li>Brak opcji</li></ul></slot>
-        </div>
-        <div class="option-group">
-            <span id="size" class="option-label">Rozmiar:</span>
-            <slot name="product-size"><ul><li>Brak opcji</li></ul></slot></slot>
-        </div>
+  <p class="Product-name">
+    <slot name="product-name">Default name.</slot>
+  </p>
+  <p class="product-description">
+    <slot name="product-description">Default description.</slot>
+  </p>
+  <div class="product-options">
+    <div class="option-group">
+      <span id="color" class="option-label">Dostępne kolory:</span>
+      <slot name="product-colors">
+        <ul class="product-colors">
+          <li>Brak opcji</li>
+        </ul>
+      </slot>
     </div>
-    <p class="product-promotion">
-        <slot name="product-promotion"></slot>
-    </p>
-    <p class="Product-price">
-        <slot name="product-price">Default price.</slot>
-    </p>
-    <button class="add-to-cart-btn">
-        Do koszyka
-    </button>
+    <div class="option-group">
+      <span id="size" class="option-label">Rozmiar:</span>
+      <slot name="product-size">
+        <ul class="product-sizes">
+          <li>Brak opcji</li>
+        </ul>
+      </slot>
+    </div>
+  </div>
+  <p class="product-promotion">
+    <slot name="product-promotion"></slot>
+  </p>
+  <p class="Product-price">
+    <slot name="product-price">Default price.</slot>
+  </p>
+  <button class="add-to-cart-btn">Do koszyka</button>
 </div>
